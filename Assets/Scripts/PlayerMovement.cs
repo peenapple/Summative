@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal"); // returns -1, 0 or 1 depending on direction of movement
 
         // jump if grounded
-        if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
+        if (Input.GetKey(KeyCode.W) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
