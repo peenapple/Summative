@@ -6,10 +6,12 @@ public class GameController : MonoBehaviour
 {
     Vector2 startPos;
     Rigidbody2D playerRb;
+    ParticleSystem particleSystem;
 
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        particleSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     private void Start()
@@ -29,6 +31,7 @@ public class GameController : MonoBehaviour
 
     void Die()
     {
+        particleSystem.Play();
         // wait for 0.5 seconds before respawn
         StartCoroutine(Respawn(0.5f));
     }
