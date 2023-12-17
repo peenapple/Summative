@@ -8,7 +8,7 @@ public class PlayerDrawing : MonoBehaviour
     public GameObject prefabToInstantiate; 
     Vector3 previousMousePosition;
     public TextMeshProUGUI count;
-    private int drawCounter = 100;
+    private int placeCounter = 3;
 
     void Start()
     {
@@ -20,9 +20,9 @@ public class PlayerDrawing : MonoBehaviour
     void Update()
     {
         // if draw counter greater than 0
-        if (drawCounter > 0)
+        if (placeCounter > 0)
         {
-            if (Input.GetMouseButton(0)) // check for left mouse click
+            if (Input.GetMouseButtonDown(0)) // check for left mouse click
             {
                 // get the current mouse position in the world coordinates
                 Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -37,8 +37,8 @@ public class PlayerDrawing : MonoBehaviour
                     previousMousePosition = currentMousePosition;
 
                     // update draw counter
-                    drawCounter--;
-                    count.text = drawCounter.ToString() + "/100";
+                    placeCounter--;
+                    count.text = placeCounter.ToString() + "/3";
                 }
             }
         }

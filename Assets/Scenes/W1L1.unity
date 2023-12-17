@@ -7298,7 +7298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100/100
+  m_text: 3/3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -23874,7 +23874,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5186131356560174179, guid: a3d0abe67a9767b49ab58b9429f768e4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2048859
+      value: 2.885083
       objectReference: {fileID: 0}
     - target: {fileID: 5186131356560174179, guid: a3d0abe67a9767b49ab58b9429f768e4, type: 3}
       propertyPath: m_LocalScale.y
@@ -23922,7 +23922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5792615833819722117, guid: a3d0abe67a9767b49ab58b9429f768e4, type: 3}
       propertyPath: m_Name
-      value: DrawedPlatform
+      value: PlacedPlatform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
