@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
         transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(duration);
         transform.position = startPos;
-        transform.localScale = new Vector3(0.7f, 0.7f, 1);
+        transform.localScale = new Vector3(0.5f, 0.5f, 1);
         playerRb.simulated = true;
     }
 }
