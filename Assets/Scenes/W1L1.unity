@@ -1328,6 +1328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToInstantiate: {fileID: 5792615833819722117, guid: a3d0abe67a9767b49ab58b9429f768e4, type: 3}
   count: {fileID: 279212246}
+  pauseBtn: {fileID: 1357777701}
+  pauseMenu: {fileID: 1243285534}
 --- !u!1 &176564842
 GameObject:
   m_ObjectHideFlags: 0
