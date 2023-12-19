@@ -29,7 +29,7 @@ public class PlayerDrawing : MonoBehaviour
             Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             currentMousePosition.z = 0f;
 
-            // check if the current mouse position is different from the previous position
+            // check if the current mouse position is different from the previous position, and if it's not on the pause button
             if (currentMousePosition != previousMousePosition && !RectTransformUtility.RectangleContainsScreenPoint(pauseBtn, currentMousePosition))
             {
                 // instantiate the prefab if the mouse has moved

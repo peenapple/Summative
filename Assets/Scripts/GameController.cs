@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
 
     void Die()
     {
+        // death effect
         particles.Play();
         // wait for 0.5 seconds before respawn
         StartCoroutine(Respawn(0.5f));
