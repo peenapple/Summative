@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.PlasticSCM.Editor.WebApi.CredentialsResponse;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 6.5f;
     private float jumpingPower = 13f;
     private bool isFacingRight = true; // which way the player faces
+    private bool finish = false;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -16,27 +18,43 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal"); // returns -1, 0 or 1 depending on direction of movement
-
-        // jump if grounded
-        if (Input.GetKey(KeyCode.W) && IsGrounded())
+        if (finish == false)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-        }
+            horizontal = Input.GetAxisRaw("Horizontal"); // returns -1, 0 or 1 depending on direction of movement
 
-        // jump even higher if button is released and the player is still moving upwards
-        if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f)
+            // jump if grounded
+            if (Input.GetKey(KeyCode.W) && IsGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            }
+
+            // jump even higher if button is released and the player is still moving upwards
+            if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
+
+            Flip();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // if you collide with end flag
+        if (collision.gameObject.CompareTag("Finish"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            finish = true;
+            rb.velocity = new Vector2(0, 0);
         }
-
-        Flip();
     }
 
     // Update is called at fixed time intervals
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // set velocity
+        if (finish == false)
+        {
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // set velocity
+        }
     }
 
     private bool IsGrounded() // check if we are grounded
