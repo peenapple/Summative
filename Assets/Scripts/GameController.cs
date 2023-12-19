@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static System.TimeZoneInfo;
 
 public class GameController : MonoBehaviour
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
     ParticleSystem particles;
 
     [SerializeField] Transform endScreen;
+    [SerializeField] Transform pauseMenu;
     [SerializeField] float tweenTime = 0.3f;
     [SerializeField] LeanTweenType tweenType;
 
@@ -56,5 +58,28 @@ public class GameController : MonoBehaviour
         transform.position = startPos;
         transform.localScale = new Vector3(0.5f, 0.5f, 1);
         playerRb.simulated = true;
+    }
+
+    public void Pause()
+    {
+        pauseMenu.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Home()
+    {
+        // go to home
+    }
+
+    public void Resume()
+    {
+        pauseMenu.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 }
