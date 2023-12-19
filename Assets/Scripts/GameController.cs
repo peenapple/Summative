@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static System.TimeZoneInfo;
 
 public class GameController : MonoBehaviour
 {
     Vector2 startPos;
     Rigidbody2D playerRb;
     ParticleSystem particles;
+
+    [SerializeField] Transform endScreen;
+    [SerializeField] float tweenTime = 0.3f;
+    [SerializeField] LeanTweenType tweenType;
 
     private void Awake()
     {
@@ -23,9 +29,14 @@ public class GameController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // if you collide with obstacle
-        if (collision.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
             Die();
+        }
+        // if you collide with end flag
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            LeanTween.moveLocalY(endScreen.gameObject, 0, tweenTime).setEase(tweenType);
         }
     }
 
