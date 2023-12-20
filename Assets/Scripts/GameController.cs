@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
         // if you collide with end flag
         if (collision.gameObject.CompareTag("Finish"))
         {
+            endScreen.gameObject.SetActive(true);
             LeanTween.moveLocalY(endScreen.gameObject, 0, tweenTime).setEase(tweenType);
         }
     }

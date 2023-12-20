@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScaleAnimation : MonoBehaviour
+public class ScaleAnimationUp : MonoBehaviour
 {
     public float minScale = 0.3142478f; // minimum scale
     public float maxScale = 0.9f; // maximum scale

@@ -12,6 +12,7 @@ public class PlayerDrawing : MonoBehaviour
 
     [SerializeField] RectTransform pauseBtn;
     [SerializeField] Transform pauseMenu;
+    [SerializeField] Transform endScreen;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class PlayerDrawing : MonoBehaviour
     void Update()
     {
         // if draw counter greater than 0, pause menu is not active and player places a platform
-        if (Input.GetMouseButtonDown(0) && placeCounter > 0 && !pauseMenu.gameObject.activeSelf)
+        if (Input.GetMouseButtonDown(0) && placeCounter > 0 && !pauseMenu.gameObject.activeSelf && !endScreen.gameObject.activeSelf)
         {
             // get the current mouse position in the world coordinates
             Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
