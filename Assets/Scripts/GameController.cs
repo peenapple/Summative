@@ -56,9 +56,7 @@ public class GameController : MonoBehaviour
         playerRb.velocity = new Vector2(0, 0);
         transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(duration);
-        transform.position = startPos;
-        transform.localScale = new Vector3(0.5f, 0.5f, 1);
-        playerRb.simulated = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Pause()
