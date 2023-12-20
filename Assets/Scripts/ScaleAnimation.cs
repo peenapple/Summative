@@ -7,7 +7,7 @@ public class ScaleAnimation : MonoBehaviour
     public float minScale = 0.3142478f; // minimum scale
     public float maxScale = 0.9f; // maximum scale
     public float scaleDuration = 0.05f; // duration for scaling
-    public float restDuration = 0.81491f; // duration to rest between scaling
+    public float restDuration = 0.81488f; // duration to rest between scaling
 
     private float timer = 0.0f;
     private bool scalingUp = true;

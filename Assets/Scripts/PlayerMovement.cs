@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Unity.PlasticSCM.Editor.WebApi.CredentialsResponse;
 
 public class PlayerMovement : MonoBehaviour
 {
