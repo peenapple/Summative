@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // if you collide with obstacle
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Saw"))
         {
             Die();
         }

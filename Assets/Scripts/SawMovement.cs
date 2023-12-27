@@ -26,15 +26,5 @@ public class SawMovement : MonoBehaviour
         // update the object's position
         transform.position = new Vector3(newPosition, transform.position.y, transform.position.z);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Check if the collision is with a platform
-        if (collision.gameObject.CompareTag("Platform"))
-        {
-            // Destroy the platform
-            Destroy(collision.gameObject);
-        }
-    }
 }
 
