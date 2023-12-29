@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapController : MonoBehaviour
 {
@@ -80,5 +81,21 @@ public class MapController : MonoBehaviour
         {
             preview3.gameObject.SetActive(false);
         }
+    } // end of Update()
+
+    // start buttons for levels
+    public void Start1()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Start2()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+
+    public void Start3()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 }
