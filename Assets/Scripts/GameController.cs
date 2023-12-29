@@ -97,7 +97,7 @@ public class GameController : MonoBehaviour
 
     public void Continue()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("W1");
         Time.timeScale = 1;
     }
 }

@@ -39,6 +39,22 @@ public class MapController : MonoBehaviour
         {
             levels[i].color = blue;
         }
+
+        if (PlayerPrefs.GetInt("UnlockedLevel", 0) == 0)
+        {
+            player.position = new Vector3(-4.01f, player.position.y, player.position.z);
+            Camera.main.transform.position = new Vector3(0, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        }
+        else if (PlayerPrefs.GetInt("UnlockedLevel", 0) == 1)
+        {
+            player.position = new Vector3(-4.01f, player.position.y, player.position.z);
+            Camera.main.transform.position = new Vector3(0, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        }
+        else if (PlayerPrefs.GetInt("UnlockedLevel", 0) == 2)
+        {
+            player.position = new Vector3(0.965f, player.position.y, player.position.z);
+            Camera.main.transform.position = new Vector3(2, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        }
     }
 
     void Update()
