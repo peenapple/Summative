@@ -68,7 +68,8 @@ public class GameController : MonoBehaviour
 
     public void Home()
     {
-        // go to home
+        SceneManager.LoadScene("W1");
+        Time.timeScale = 1;
     }
 
     public void Resume()
