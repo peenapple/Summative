@@ -10,6 +10,7 @@ public class MapMovement : MonoBehaviour
 
     void Update()
     {
+        // player + camera movement with the map
         if (Mathf.Abs(player.position.x + 4.01f) < 0.01f)
         {
             if (Input.GetKeyDown(KeyCode.D))
