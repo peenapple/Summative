@@ -38,8 +38,19 @@ public class GameController : MonoBehaviour
         // if you collide with end flag
         if (collision.gameObject.CompareTag("Finish"))
         {
+            UnlockNewLevel();
             endScreen.gameObject.SetActive(true);
             LeanTween.moveLocalY(endScreen.gameObject, 0, tweenTime).setEase(tweenType);
+        }
+    }
+
+    void UnlockNewLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 0) + 1);
+            PlayerPrefs.Save();
         }
     }
 

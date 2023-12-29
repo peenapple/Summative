@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,23 +16,34 @@ public class MapController : MonoBehaviour
     [SerializeField] Transform preview3;
 
     public SpriteRenderer[] levels;
+    Color32 red = new Color32(197, 87, 91, 255);
+    Color32 blue = new Color32(75, 106, 190, 255);
+
+    // FOR TESTING PURPOSES
+    [MenuItem("Tools/Reset PlayerPrefs")]
+    public static void Reset()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("PlayerPrefs Reset");
+    }
+    // FOR TESTING PURPOSES
 
     private void Awake()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 0);
         for (int i = 0; i < levels.Length; i++)
         {
-            levels[i].color = new Color32(197, 87, 91, 255);
+            levels[i].color = red;
         }
         for (int i = 0; i < unlockedLevel; i++)
         {
-            levels[i].color = new Color32(75, 106, 190, 255);
+            levels[i].color = blue;
         }
     }
 
     void Update()
     {
-        // player + camera movement with the map for level 1
+        // for level 1
         if (Mathf.Abs(player.position.x + 4.01f) < 0.01f)
         {
             // previews
@@ -39,7 +51,7 @@ public class MapController : MonoBehaviour
             preview2.gameObject.SetActive(false);
             preview3.gameObject.SetActive(false);
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) && levels[0].color == blue)
             {
                 LeanTween.moveLocalX(player.gameObject, 0.965f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 2, tweenTime).setEase(tweenType);
@@ -62,7 +74,7 @@ public class MapController : MonoBehaviour
             preview2.gameObject.SetActive(true);
             preview3.gameObject.SetActive(false);
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) && levels[1].color == blue)
             {
                 LeanTween.moveLocalX(player.gameObject, 5.825f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 4, tweenTime).setEase(tweenType);
@@ -94,7 +106,7 @@ public class MapController : MonoBehaviour
             preview2.gameObject.SetActive(false);
             preview3.gameObject.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) && levels[2].color == blue)
             {
                 LeanTween.moveLocalX(player.gameObject, 10.6f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 6, tweenTime).setEase(tweenType);
