@@ -8,10 +8,26 @@ public class MapController : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] float tweenTime = 1f;
     [SerializeField] LeanTweenType tweenType;
+    private bool isFacingRight = true;
 
     [SerializeField] Transform preview1;
     [SerializeField] Transform preview2;
     [SerializeField] Transform preview3;
+
+    public SpriteRenderer[] levels;
+
+    private void Awake()
+    {
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        for (int i = 0; i < levels.Length; i++)
+        {
+            levels[i].color = new Color32(197, 87, 91, 255);
+        }
+        for (int i = 0; i < unlockedLevel; i++)
+        {
+            levels[i].color = new Color32(75, 106, 190, 255);
+        }
+    }
 
     void Update()
     {
@@ -27,6 +43,10 @@ public class MapController : MonoBehaviour
             {
                 LeanTween.moveLocalX(player.gameObject, 0.965f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 2, tweenTime).setEase(tweenType);
+                if (!isFacingRight)
+                {
+                    Flip();
+                }
             }
         }
         else
@@ -46,11 +66,19 @@ public class MapController : MonoBehaviour
             {
                 LeanTween.moveLocalX(player.gameObject, 5.825f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 4, tweenTime).setEase(tweenType);
+                if (!isFacingRight)
+                {
+                    Flip();
+                }
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
                 LeanTween.moveLocalX(player.gameObject, -4.01f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 0, tweenTime).setEase(tweenType);
+                if (isFacingRight)
+                {
+                    Flip();
+                }
             }
         }
         else
@@ -70,11 +98,19 @@ public class MapController : MonoBehaviour
             {
                 LeanTween.moveLocalX(player.gameObject, 10.6f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 6, tweenTime).setEase(tweenType);
+                if (!isFacingRight)
+                {
+                    Flip();
+                }
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
                 LeanTween.moveLocalX(player.gameObject, 0.965f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 2, tweenTime).setEase(tweenType);
+                if (isFacingRight)
+                {
+                    Flip();
+                }
             }
         }
         else
@@ -82,6 +118,14 @@ public class MapController : MonoBehaviour
             preview3.gameObject.SetActive(false);
         }
     } // end of Update()
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = player.localScale;
+        localScale.x *= -1f;
+        player.localScale = localScale;
+    }
 
     // start buttons for levels
     public void Start1()
