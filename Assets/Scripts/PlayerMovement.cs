@@ -35,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
 
             Flip();
         }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Finish"))
         {
             finish = true;
-            rb.velocity = new Vector2(0, 0);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 
@@ -53,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
         if (finish == false)
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // set velocity
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 
