@@ -30,6 +30,7 @@ public class MapController : MonoBehaviour
 
     private void Awake()
     {
+        // set levels unlocked with playerprefs
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 0);
         for (int i = 0; i < levels.Length; i++)
         {
@@ -40,6 +41,7 @@ public class MapController : MonoBehaviour
             levels[i].color = blue;
         }
 
+        // set player position on the map with playerprefs
         if (PlayerPrefs.GetInt("UnlockedLevel", 0) == 0)
         {
             player.position = new Vector3(-4.01f, player.position.y, player.position.z);
@@ -147,6 +149,7 @@ public class MapController : MonoBehaviour
         }
     } // end of Update()
 
+    // flip player when moving left or right
     private void Flip()
     {
         isFacingRight = !isFacingRight;
