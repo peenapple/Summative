@@ -19,17 +19,6 @@ public class MapController : MonoBehaviour
     Color32 red = new Color32(197, 87, 91, 255);
     Color32 blue = new Color32(75, 106, 190, 255);
 
-    /*
-    // FOR TESTING PURPOSES
-    [MenuItem("Tools/Reset PlayerPrefs")]
-    public static void Reset()
-    {
-        PlayerPrefs.DeleteAll();
-        Debug.Log("PlayerPrefs Reset");
-    }
-    // FOR TESTING PURPOSES
-    */
-
     private void Awake()
     {
         // set levels unlocked with playerprefs
