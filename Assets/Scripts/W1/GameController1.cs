@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using static System.TimeZoneInfo;
 
-public class GameController : MonoBehaviour
+public class GameController1 : MonoBehaviour
 {
     Vector2 startPos;
     Rigidbody2D playerRb;
