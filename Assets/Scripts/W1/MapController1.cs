@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MapController : MonoBehaviour
+public class MapController1 : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] float tweenTime = 1f;
