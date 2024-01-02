@@ -46,10 +46,10 @@ public class GameController1 : MonoBehaviour
 
     void UnlockNewLevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex1"))
         {
-            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 0) + 1);
+            PlayerPrefs.SetInt("ReachedIndex1", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel1", PlayerPrefs.GetInt("UnlockedLevel1", 0) + 1);
             PlayerPrefs.Save();
         }
     }
