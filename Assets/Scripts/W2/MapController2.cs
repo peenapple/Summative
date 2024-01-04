@@ -48,7 +48,7 @@ public class MapController2 : MonoBehaviour
     void Update()
     {
         // for level 1
-        if (Mathf.Abs(player.position.x + 4.01f) < 0.01f)
+        if (Mathf.Abs(player.position.x + 3.99f) < 0.01f)
         {
             // previews
             preview1.gameObject.SetActive(true);
@@ -57,7 +57,7 @@ public class MapController2 : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.D) && levels[0].color == blue)
             {
-                LeanTween.moveLocalX(player.gameObject, 0.965f, tweenTime).setEase(tweenType);
+                LeanTween.moveLocalX(player.gameObject, 1f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 2, tweenTime).setEase(tweenType);
                 if (!isFacingRight)
                 {
@@ -71,7 +71,7 @@ public class MapController2 : MonoBehaviour
         }
 
         // for level 2
-        if (Mathf.Abs(player.position.x - 0.965f) < 0.01f)
+        if (Mathf.Abs(player.position.x - 1f) < 0.01f)
         {
             // previews
             preview1.gameObject.SetActive(false);
@@ -80,7 +80,7 @@ public class MapController2 : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.D) && levels[1].color == blue)
             {
-                LeanTween.moveLocalX(player.gameObject, 5.825f, tweenTime).setEase(tweenType);
+                LeanTween.moveLocalX(player.gameObject, 5.87f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 4, tweenTime).setEase(tweenType);
                 if (!isFacingRight)
                 {
@@ -89,7 +89,7 @@ public class MapController2 : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
-                LeanTween.moveLocalX(player.gameObject, -4.01f, tweenTime).setEase(tweenType);
+                LeanTween.moveLocalX(player.gameObject, -3.99f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 0, tweenTime).setEase(tweenType);
                 if (isFacingRight)
                 {
@@ -103,7 +103,7 @@ public class MapController2 : MonoBehaviour
         }
 
         // for level 3
-        if (Mathf.Abs(player.position.x - 5.825f) < 0.01f)
+        if (Mathf.Abs(player.position.x - 5.87f) < 0.01f)
         {
             // previews
             preview1.gameObject.SetActive(false);
@@ -121,7 +121,7 @@ public class MapController2 : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
-                LeanTween.moveLocalX(player.gameObject, 0.965f, tweenTime).setEase(tweenType);
+                LeanTween.moveLocalX(player.gameObject, 1f, tweenTime).setEase(tweenType);
                 LeanTween.moveLocalX(Camera.main.transform.gameObject, 2, tweenTime).setEase(tweenType);
                 if (isFacingRight)
                 {
