@@ -13879,7 +13879,7 @@ GameObject:
   - component: {fileID: 846853486}
   - component: {fileID: 846853484}
   - component: {fileID: 846853488}
-  - component: {fileID: 846853489}
+  - component: {fileID: 846853491}
   - component: {fileID: 846853490}
   m_Layer: 0
   m_Name: Player
@@ -14001,22 +14001,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &846853489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846853483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2462df5f935efd4c931a612a5cf6296, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endScreen: {fileID: 872841356}
-  pauseMenu: {fileID: 1243285534}
-  tweenTime: 0.3
-  tweenType: 6
 --- !u!60 &846853490
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14070,6 +14054,22 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.3121609}
       - {x: 0.5, y: 0.3135911}
   m_UseDelaunayMesh: 0
+--- !u!114 &846853491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846853483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dceb1b3fd000b74fa9969e5422994bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endScreen: {fileID: 872841356}
+  pauseMenu: {fileID: 1243285534}
+  tweenTime: 0.3
+  tweenType: 6
 --- !u!1 &865624518
 GameObject:
   m_ObjectHideFlags: 0
@@ -16123,7 +16123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 846853489}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -19336,7 +19336,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 846853489}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Pause
         m_Mode: 1
@@ -20980,7 +20980,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 846853489}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Home
         m_Mode: 1
@@ -22997,7 +22997,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 846853489}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Continue
         m_Mode: 1
@@ -26651,7 +26651,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 846853489}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
