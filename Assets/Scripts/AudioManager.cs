@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        // keep music playing on scsene load
+        // keep music playing on scene load
         if (instance == null)
         {
             instance = this;

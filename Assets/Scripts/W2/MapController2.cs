@@ -64,6 +64,14 @@ public class MapController2 : MonoBehaviour
                     Flip();
                 }
             }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                LeanTween.moveLocalX(player.gameObject, -9f, tweenTime).setEase(tweenType);
+                if (isFacingRight)
+                {
+                    Flip();
+                }
+            }
         }
         else
         {
