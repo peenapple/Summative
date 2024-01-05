@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PlayerDrawing : MonoBehaviour
+public class PlayerPlacing : MonoBehaviour
 {
     public GameObject prefabToInstantiate; 
     Vector3 previousMousePosition;
