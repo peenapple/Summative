@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using static System.TimeZoneInfo;
 
@@ -11,6 +12,7 @@ public class GameController1 : MonoBehaviour
     Rigidbody2D playerRb;
     ParticleSystem particles;
 
+    [SerializeField] Button pause;
     [SerializeField] Transform endScreen;
     [SerializeField] Transform pauseMenu;
     [SerializeField] float tweenTime = 0.3f;
@@ -39,6 +41,7 @@ public class GameController1 : MonoBehaviour
         if (collision.gameObject.CompareTag("Finish"))
         {
             UnlockNewLevel();
+            pause.interactable = false;
             endScreen.gameObject.SetActive(true);
             LeanTween.moveLocalY(endScreen.gameObject, 0, tweenTime).setEase(tweenType);
         }
