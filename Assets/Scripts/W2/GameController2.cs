@@ -26,6 +26,7 @@ public class GameController2 : MonoBehaviour
     {
         // spawn point
         startPos = transform.position;
+        LeanTween.moveLocalY(Camera.main.transform.gameObject, 30, 30);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,7 +41,7 @@ public class GameController2 : MonoBehaviour
         {
             UnlockNewLevel();
             endScreen.gameObject.SetActive(true);
-            LeanTween.moveLocalY(endScreen.gameObject, endScreen.position.y + 1300, tweenTime).setEase(tweenType);
+            LeanTween.moveLocalY(endScreen.gameObject, 0, tweenTime).setEase(tweenType);
         }
     }
 
