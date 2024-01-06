@@ -40,7 +40,7 @@ public class GameController2 : MonoBehaviour
         {
             UnlockNewLevel();
             endScreen.gameObject.SetActive(true);
-            LeanTween.moveLocalY(endScreen.gameObject, 0, tweenTime).setEase(tweenType);
+            LeanTween.moveLocalY(endScreen.gameObject, endScreen.position.y + 1300, tweenTime).setEase(tweenType);
         }
     }
 
