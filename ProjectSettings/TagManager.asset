@@ -9,6 +9,7 @@ TagManager:
   - Saw
   - Portal
   - Back
+  - Audio
   layers:
   - Default
   - TransparentFX

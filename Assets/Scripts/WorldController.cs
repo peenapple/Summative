@@ -5,18 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class WorldController : MonoBehaviour
 {
-    [SerializeField] GameObject AudioManager;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Portal"))
         {
-            Destroy(AudioManager);
+            GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("Audio");
+
+            // Destroy each audio object found
+            foreach (GameObject audioObject in audioObjects)
+            {
+                Destroy(audioObject);
+            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
         }
         if (collision.gameObject.CompareTag("Back"))
         {
-            Destroy(AudioManager);
+            GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("Audio");
+
+            // Destroy each audio object found
+            foreach (GameObject audioObject in audioObjects)
+            {
+                Destroy(audioObject);
+            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
         }
     }
