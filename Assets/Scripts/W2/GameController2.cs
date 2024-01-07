@@ -28,7 +28,8 @@ public class GameController2 : MonoBehaviour
     {
         // spawn point
         startPos = transform.position;
-        LeanTween.moveLocalY(Camera.main.transform.gameObject, 30, 30);
+        // main camera scrolling
+        LeanTween.moveLocalY(Camera.main.transform.gameObject, 30, 40);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
