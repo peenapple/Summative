@@ -37,6 +37,7 @@ public class LaserAttack : MonoBehaviour
         }
     }
 
+    // Laser rests activated for 1.5 seconds
     void Wait()
     {
         timer = 0.0f;
@@ -45,6 +46,7 @@ public class LaserAttack : MonoBehaviour
         Invoke("Reactivate", inactiveDuration);
     }
 
+    // Laser rests inactivated for 1 second
     void Reactivate()
     {
         // Reactivate the object and reset parameters

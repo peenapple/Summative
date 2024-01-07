@@ -16,7 +16,7 @@ public class WorldController : MonoBehaviour
             {
                 Destroy(audioObject);
             }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4); // load next world
         }
         if (collision.gameObject.CompareTag("Back"))
         {
@@ -27,7 +27,7 @@ public class WorldController : MonoBehaviour
             {
                 Destroy(audioObject);
             }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4); // load previous world
         }
     }
 }
