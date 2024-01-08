@@ -10,6 +10,7 @@ TagManager:
   - Portal
   - Back
   - Audio
+  - Deactivator
   layers:
   - Default
   - TransparentFX

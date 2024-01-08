@@ -12,10 +12,18 @@ public class LaserAttack : MonoBehaviour
 
     private float timer = 0.0f;
     private bool inactive = false;
+    private bool isActivated = true;
+
+    LaserAttack script;
+
+    private void Awake()
+    {
+        script = GetComponent<LaserAttack>();
+    }
 
     void Update()
     {
-        if (!inactive)
+        if (!inactive && isActivated)
         {
             timer += Time.deltaTime;
 
@@ -52,5 +60,14 @@ public class LaserAttack : MonoBehaviour
         // Reactivate the object and reset parameters
         gameObject.SetActive(true);
         inactive = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // if you collide with obstacle
+        if (collision.gameObject.CompareTag("Deactivator"))
+        {
+            Destroy(script);
+        }
     }
 }
