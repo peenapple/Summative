@@ -14,11 +14,15 @@ public class LaserAttack : MonoBehaviour
     private bool inactive = false;
     private bool isActivated = true;
 
+    public SpriteRenderer spriteRenderer;
     LaserAttack script;
+    LaserAnimation script2;
 
     private void Awake()
     {
         script = GetComponent<LaserAttack>();
+        script2 = GetComponent<LaserAnimation>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -64,9 +68,19 @@ public class LaserAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // if you collide with obstacle
+        // if you collide with deactivator
         if (collision.gameObject.CompareTag("Deactivator"))
         {
+            // change transparency and order in layer
+            Color colorChange = spriteRenderer.color;
+            colorChange.a = 0.3f;
+            spriteRenderer.color = colorChange;
+            spriteRenderer.sortingOrder = -2;
+
+            // change tag
+            gameObject.tag = "Untagged";
+
+            Destroy(script2);
             Destroy(script);
         }
     }

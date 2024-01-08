@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Unity.PlasticSCM.Editor.WebApi.CredentialsResponse;
 
 public class GearMovementL1: MonoBehaviour
 {
@@ -10,12 +9,14 @@ public class GearMovementL1: MonoBehaviour
     public float moveSpeed = 3.52f; // adjust the speed
     public float isRight = 1f;
     public float initialPosition;
+    public SpriteRenderer spriteRenderer;
 
     private bool isActivated = true;
 
     void Start()
     {
         isActivated = true;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -35,13 +36,23 @@ public class GearMovementL1: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // if you collide with obstacle
+        // if you collide with deactivator
         if (collision.gameObject.CompareTag("Deactivator"))
         {
+            // deactivate the gear
             isActivated = false;
             rotationSpeed = 0f;
             moveDistance = 0f;
             moveSpeed = 0f;
+
+            // change transparency and order in layer
+            Color colorChange = spriteRenderer.color;
+            colorChange.a = 0.8f;
+            spriteRenderer.color = colorChange;
+            spriteRenderer.sortingOrder = -2;
+
+            // change tag
+            gameObject.tag = "Untagged";
         }
     }
 }

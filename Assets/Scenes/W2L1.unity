@@ -390,6 +390,7 @@ MonoBehaviour:
   animationDuration: 0.7
   waitDuration: 1.5
   inactiveDuration: 0.5
+  spriteRenderer: {fileID: 0}
 --- !u!114 &151379639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5756,6 +5757,7 @@ MonoBehaviour:
   animationDuration: 0.7
   waitDuration: 1.5
   inactiveDuration: 0.5
+  spriteRenderer: {fileID: 0}
 --- !u!114 &387360879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6146,7 +6148,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 97bf5f07faee7bf40bd0da03ae67d94a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6379,6 +6381,7 @@ MonoBehaviour:
   animationDuration: 0.7
   waitDuration: 1.5
   inactiveDuration: 0.5
+  spriteRenderer: {fileID: 0}
 --- !u!114 &682572350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7529,6 +7532,7 @@ MonoBehaviour:
   moveSpeed: 3.52
   isRight: -1
   initialPosition: -2.88
+  spriteRenderer: {fileID: 0}
 --- !u!1 &941327363
 GameObject:
   m_ObjectHideFlags: 0
@@ -7694,6 +7698,7 @@ MonoBehaviour:
   animationDuration: 0.7
   waitDuration: 1.5
   inactiveDuration: 0.5
+  spriteRenderer: {fileID: 0}
 --- !u!50 &941327369
 Rigidbody2D:
   serializedVersion: 4
@@ -9086,7 +9091,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: ec79e5751bd741c48b9af6fadaf1a82d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9901,6 +9906,7 @@ MonoBehaviour:
   moveSpeed: 3.52
   isRight: 1
   initialPosition: 2.85
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1790190266
 GameObject:
   m_ObjectHideFlags: 0
@@ -10791,6 +10797,7 @@ MonoBehaviour:
   animationDuration: 0.7
   waitDuration: 1.5
   inactiveDuration: 0.5
+  spriteRenderer: {fileID: 0}
 --- !u!114 &2078053114
 MonoBehaviour:
   m_ObjectHideFlags: 0
