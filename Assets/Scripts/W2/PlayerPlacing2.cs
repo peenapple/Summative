@@ -12,7 +12,7 @@ public class PlayerPlacing2 : MonoBehaviour
     public TextMeshProUGUI platCount;
     public TextMeshProUGUI deactCount;
 
-    private int platCounter = 25;
+    private int platCounter = 20;
     private int deactCounter = 3;
     private bool platActive = true;
     private bool deactActive = false;
@@ -67,7 +67,7 @@ public class PlayerPlacing2 : MonoBehaviour
 
                     // update draw counter
                     platCounter--;
-                    platCount.text = platCounter.ToString() + "/25";
+                    platCount.text = platCounter.ToString() + "/20";
                 }
             }
         }
