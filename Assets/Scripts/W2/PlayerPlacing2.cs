@@ -12,8 +12,10 @@ public class PlayerPlacing2 : MonoBehaviour
     public TextMeshProUGUI platCount;
     public TextMeshProUGUI deactCount;
 
-    private int platCounter = 20;
-    private int deactCounter = 3;
+    public int platCounter = 20;
+    public int deactCounter = 3;
+    private int initialPlatCount;
+    private int initialDeactCount;
     private bool platActive = true;
     private bool deactActive = false;
 
@@ -29,6 +31,9 @@ public class PlayerPlacing2 : MonoBehaviour
         previousMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         previousMousePosition.z = 0f;
         platActive = true;
+
+        initialPlatCount = platCounter;
+        initialDeactCount = deactCounter;
     }
 
     void Update()
@@ -67,7 +72,7 @@ public class PlayerPlacing2 : MonoBehaviour
 
                     // update draw counter
                     platCounter--;
-                    platCount.text = platCounter.ToString() + "/20";
+                    platCount.text = platCounter.ToString() + "/" + initialPlatCount.ToString();
                 }
             }
         }
@@ -89,7 +94,7 @@ public class PlayerPlacing2 : MonoBehaviour
                     previousMousePosition = currentMousePosition;
 
                     deactCounter--;
-                    deactCount.text = deactCounter.ToString() + "/3";
+                    deactCount.text = deactCounter.ToString() + "/" + initialDeactCount.ToString();
                 }
             }
         }

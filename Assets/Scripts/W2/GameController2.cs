@@ -18,6 +18,8 @@ public class GameController2 : MonoBehaviour
     [SerializeField] float tweenTime = 0.3f;
     [SerializeField] LeanTweenType tweenType;
 
+    public int scrollSpeed;
+
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
@@ -29,7 +31,7 @@ public class GameController2 : MonoBehaviour
         // spawn point
         startPos = transform.position;
         // main camera scrolling
-        LeanTween.moveLocalY(Camera.main.transform.gameObject, 30, 40);
+        LeanTween.moveLocalY(Camera.main.transform.gameObject, 30, scrollSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

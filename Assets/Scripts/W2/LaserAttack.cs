@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LaserAttack : MonoBehaviour
 {
@@ -9,9 +10,10 @@ public class LaserAttack : MonoBehaviour
     public float animationDuration = 0.8f; // Duration for one cycle
     public float waitDuration = 1.5f; // Duration to wait
     public float inactiveDuration = 1.0f; // Duration to stay inactive
+    public float restDuration = 0f; // Duration to rest before starting
 
     private float timer = 0.0f;
-    private bool inactive = false;
+    private bool inactive = true;
     private bool isActivated = true;
 
     public SpriteRenderer spriteRenderer;
@@ -23,6 +25,16 @@ public class LaserAttack : MonoBehaviour
         script = GetComponent<LaserAttack>();
         script2 = GetComponent<LaserAnimation>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        StartCoroutine(Rest(restDuration));
+    }
+    IEnumerator Rest(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        inactive = false;
     }
 
     void Update()
