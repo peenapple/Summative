@@ -12,7 +12,7 @@ public class PlayerPlacing2 : MonoBehaviour
     public TextMeshProUGUI platCount;
     public TextMeshProUGUI deactCount;
 
-    private int platCounter = 30;
+    private int platCounter = 25;
     private int deactCounter = 3;
     private bool platActive = true;
     private bool deactActive = false;
@@ -20,6 +20,8 @@ public class PlayerPlacing2 : MonoBehaviour
     [SerializeField] RectTransform pauseBtn;
     [SerializeField] Transform pauseMenu;
     [SerializeField] Transform endScreen;
+    [SerializeField] Transform border1;
+    [SerializeField] Transform border2;
 
     void Start()
     {
@@ -45,6 +47,9 @@ public class PlayerPlacing2 : MonoBehaviour
         // for platforms
         if (platActive)
         {
+            border1.gameObject.SetActive(true);
+            border2.gameObject.SetActive(false);
+
             // if draw counter greater than 0, pause menu is not active and player places a platform
             if (Input.GetMouseButtonDown(0) && platCounter > 0 && !pauseMenu.gameObject.activeSelf && !endScreen.gameObject.activeSelf)
             {
@@ -62,7 +67,7 @@ public class PlayerPlacing2 : MonoBehaviour
 
                     // update draw counter
                     platCounter--;
-                    platCount.text = platCounter.ToString() + "/30";
+                    platCount.text = platCounter.ToString() + "/25";
                 }
             }
         }
@@ -70,6 +75,9 @@ public class PlayerPlacing2 : MonoBehaviour
         // for deactivator
         if (deactActive)
         {
+            border1.gameObject.SetActive(false);
+            border2.gameObject.SetActive(true);
+
             if (Input.GetMouseButtonDown(0) && deactCounter > 0 && !pauseMenu.gameObject.activeSelf && !endScreen.gameObject.activeSelf)
             {
                 Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
