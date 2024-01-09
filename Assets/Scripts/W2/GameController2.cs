@@ -19,6 +19,7 @@ public class GameController2 : MonoBehaviour
     [SerializeField] LeanTweenType tweenType;
 
     public int scrollSpeed;
+    public int scrollDistance;
 
     private void Awake()
     {
@@ -31,7 +32,7 @@ public class GameController2 : MonoBehaviour
         // spawn point
         startPos = transform.position;
         // main camera scrolling
-        LeanTween.moveLocalY(Camera.main.transform.gameObject, 30, scrollSpeed);
+        LeanTween.moveLocalY(Camera.main.transform.gameObject, scrollDistance, scrollSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

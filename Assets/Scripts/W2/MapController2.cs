@@ -35,12 +35,12 @@ public class MapController2 : MonoBehaviour
         // set player position on the map with playerprefs
         if (PlayerPrefs.GetInt("UnlockedLevel2", 0) == 2)
         {
-            player.position = new Vector3(0.965f, player.position.y, player.position.z);
+            player.position = new Vector3(1f, player.position.y, player.position.z);
             Camera.main.transform.position = new Vector3(2, Camera.main.transform.position.y, Camera.main.transform.position.z);
         }
         if (PlayerPrefs.GetInt("UnlockedLevel2", 0) == 3)
         {
-            player.position = new Vector3(5.825f, player.position.y, player.position.z);
+            player.position = new Vector3(5.87f, player.position.y, player.position.z);
             Camera.main.transform.position = new Vector3(4, Camera.main.transform.position.y, Camera.main.transform.position.z);
         }
     }
