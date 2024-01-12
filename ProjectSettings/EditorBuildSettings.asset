@@ -22,11 +22,14 @@ EditorBuildSettings:
     guid: 4646883448c17ab4fa76f06a5c979bdf
   - enabled: 1
     path: Assets/Scenes/W2L1.unity
-    guid: bb8c9496c3d7fa547ac744b409964bb0
+    guid: 78cfd02f1d5214d4a8966b0110f6bc36
   - enabled: 1
     path: Assets/Scenes/W2L2.unity
     guid: bd73f572092e7284ea8e2cfe62a93e47
   - enabled: 1
     path: Assets/Scenes/W2L3.unity
     guid: ec465bfff29c63d46b9b69d3f5fa52b6
+  - enabled: 1
+    path: Assets/Scenes/W3.unity
+    guid: 8fe2bab86fb6cc14a9e6bf05c190f3c9
   m_configObjects: {}
