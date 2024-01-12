@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GearMovementL1: MonoBehaviour
+public class GearMovement: MonoBehaviour
 {
     public float rotationSpeed = 150f; // adjust the speed of rotation
     public float moveDistance = 3f; // adjust the distance it moves

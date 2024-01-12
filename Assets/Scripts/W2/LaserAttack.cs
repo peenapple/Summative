@@ -11,6 +11,8 @@ public class LaserAttack : MonoBehaviour
     public float waitDuration = 1.5f; // Duration to wait
     public float inactiveDuration = 1.0f; // Duration to stay inactive
     public float restDuration = 0f; // Duration to rest before starting
+    public bool isBlue = true;
+    public bool isMoving = true;
 
     private float timer = 0.0f;
     private bool inactive = true;
@@ -39,7 +41,7 @@ public class LaserAttack : MonoBehaviour
 
     void Update()
     {
-        if (!inactive && isActivated)
+        if (!inactive && isActivated && isMoving)
         {
             timer += Time.deltaTime;
 
@@ -81,7 +83,7 @@ public class LaserAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // if you collide with deactivator
-        if (collision.gameObject.CompareTag("Deactivator"))
+        if (collision.gameObject.CompareTag("Deactivator") && isBlue)
         {
             // change transparency and order in layer
             Color colorChange = spriteRenderer.color;

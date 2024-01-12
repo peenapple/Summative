@@ -177,6 +177,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 1
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &30238416
 MonoBehaviour:
@@ -859,6 +860,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 2
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &235787962
 MonoBehaviour:
@@ -6327,6 +6329,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 2
   restDuration: 2
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &416171667
 MonoBehaviour:
@@ -6521,6 +6524,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 0
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &416518150
 MonoBehaviour:
@@ -7276,6 +7280,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 2
   restDuration: 2
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &650524535
 MonoBehaviour:
@@ -8413,6 +8418,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 2
   restDuration: 2
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &906250217
 MonoBehaviour:
@@ -8719,6 +8725,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 0
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!50 &941327369
 Rigidbody2D:
@@ -8885,6 +8892,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 3
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &985967394
 MonoBehaviour:
@@ -9079,6 +9087,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 3
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1005231129
 MonoBehaviour:
@@ -9291,7 +9300,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: df1d8b0497361e14ba56ecb593f8b00f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9573,6 +9582,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 2
   restDuration: 0
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1220632252
 MonoBehaviour:
@@ -9853,6 +9863,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 3
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1248152508
 MonoBehaviour:
@@ -10287,6 +10298,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 3
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1279409884
 MonoBehaviour:
@@ -10781,6 +10793,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 1
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1367371211
 MonoBehaviour:
@@ -11109,6 +11122,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 0
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1393075145
 MonoBehaviour:
@@ -11303,6 +11317,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 3
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1395419092
 MonoBehaviour:
@@ -11851,6 +11866,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 2
   restDuration: 2
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1533190374
 MonoBehaviour:
@@ -12261,6 +12277,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 2
   restDuration: 0
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1570026754
 MonoBehaviour:
@@ -12899,6 +12916,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 2
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1631841226
 MonoBehaviour:
@@ -13177,6 +13195,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 2
   restDuration: 0
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1671232052
 MonoBehaviour:
@@ -13816,6 +13835,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 2
   restDuration: 0
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1795871918
 MonoBehaviour:
@@ -14545,6 +14565,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 0
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &1988159368
 MonoBehaviour:
@@ -14739,6 +14760,7 @@ MonoBehaviour:
   waitDuration: 1
   inactiveDuration: 3
   restDuration: 0
+  isBlue: 1
   spriteRenderer: {fileID: 0}
 --- !u!114 &2008350227
 MonoBehaviour:
@@ -15443,7 +15465,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 76f1dffb9cde70c4a9060eaad38a7a18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

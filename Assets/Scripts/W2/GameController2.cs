@@ -20,6 +20,7 @@ public class GameController2 : MonoBehaviour
 
     public int scrollSpeed;
     public int scrollDistance;
+    private bool finish = false;
 
     private void Awake()
     {
@@ -38,9 +39,12 @@ public class GameController2 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // if you collide with obstacle
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Saw"))
+        if (!finish)
         {
-            Die();
+            if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Saw"))
+            {
+                Die();
+            }
         }
         // if you collide with end flag
         if (collision.gameObject.CompareTag("Finish"))
@@ -49,7 +53,7 @@ public class GameController2 : MonoBehaviour
             pause.interactable = false;
             endScreen.gameObject.SetActive(true);
             LeanTween.moveLocalY(endScreen.gameObject, 0, tweenTime).setEase(tweenType);
-
+            finish = true;
         }
     }
 
