@@ -23,6 +23,24 @@ public class PlayerPlacing1 : MonoBehaviour
 
     void Update()
     {
+        // Check for right mouse button click
+        if (Input.GetMouseButtonDown(1))
+        {
+            // Raycast to get the object under the mouse in 2D
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                // Check if the object has the "platform" tag
+                if (hit.collider.CompareTag("Platform"))
+                {
+                    // Destroy the object
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+        }
+
         // if draw counter greater than 0, pause menu is not active and player places a platform
         if (Input.GetMouseButtonDown(0) && placeCounter > 0 && !pauseMenu.gameObject.activeSelf && !endScreen.gameObject.activeSelf)
         {
