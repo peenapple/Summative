@@ -7,11 +7,6 @@ public class DeactBreaking : MonoBehaviour
 {
     public bool isW3 = false;
 
-    private void Start()
-    {
-        transform.gameObject.SetActive(true);
-    }
-
     void Update()
     {
         if (isW3)
@@ -23,6 +18,6 @@ public class DeactBreaking : MonoBehaviour
     IEnumerator Break(float duration)
     {
         yield return new WaitForSeconds(duration);
-        transform.gameObject.SetActive(false);
+        Destroy(transform.gameObject);
     }
 }
