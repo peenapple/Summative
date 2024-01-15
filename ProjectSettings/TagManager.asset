@@ -11,6 +11,7 @@ TagManager:
   - Back
   - Audio
   - Deactivator
+  - LevelPlatform
   layers:
   - Default
   - TransparentFX

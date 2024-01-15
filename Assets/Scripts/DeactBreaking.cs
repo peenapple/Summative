@@ -9,7 +9,7 @@ public class DeactBreaking : MonoBehaviour
 
     void Update()
     {
-        if (isW3)
+        if (inCamera(transform.gameObject) && isW3)
         {
             StartCoroutine(Break(1.2f)); // break after 1.2 seconds
         }
@@ -19,5 +19,14 @@ public class DeactBreaking : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         Destroy(transform.gameObject);
+    }
+
+    bool inCamera(GameObject obj)
+    {
+        // Get the object's position in viewport coordinates
+        Vector3 viewportPoint = Camera.main.WorldToViewportPoint(obj.transform.position);
+
+        // Check if the object is inside the camera view (viewport coordinates are between 0 and 1)
+        return viewportPoint.x > 0 && viewportPoint.x < 1 && viewportPoint.y > 0 && viewportPoint.y < 1;
     }
 }

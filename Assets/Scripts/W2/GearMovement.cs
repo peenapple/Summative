@@ -9,6 +9,7 @@ public class GearMovement: MonoBehaviour
     public float moveSpeed = 3.52f; // adjust the speed
     public float isRight = 1f;
     public float initialPosition;
+    public float transparency = 0.8f;
     public SpriteRenderer spriteRenderer;
 
     private bool isActivated = true;
@@ -47,7 +48,7 @@ public class GearMovement: MonoBehaviour
 
             // change transparency and order in layer
             Color colorChange = spriteRenderer.color;
-            colorChange.a = 0.8f;
+            colorChange.a = transparency;
             spriteRenderer.color = colorChange;
             spriteRenderer.sortingOrder = -2;
 
