@@ -36,7 +36,7 @@ public class SmallPlatBreaking : MonoBehaviour
             transform.localScale = newScale; // change scale
             boxCollider.size = new Vector2(5.8f, 0.66f); // change boxcollider
 
-            StartCoroutine(Break(1.2f)); // break after 2 seconds
+            StartCoroutine(Break(1.2f)); // break after 1.2 seconds
         }
     }
 

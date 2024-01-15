@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070627256188866585}
   - component: {fileID: 7584132782936000906}
+  - component: {fileID: 3143619661342523125}
   - component: {fileID: 1607086326484025207}
   m_Layer: 0
   m_Name: Deactivator
@@ -85,6 +86,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3143619661342523125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905482780508751609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186f31bf39ab4c54594e9e583aba3de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &1607086326484025207
 PolygonCollider2D:
   m_ObjectHideFlags: 0
