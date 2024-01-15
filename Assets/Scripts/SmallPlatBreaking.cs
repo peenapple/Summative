@@ -28,6 +28,17 @@ public class SmallPlatBreaking : MonoBehaviour
             StartCoroutine(Break(0.8f)); // break after 0.8 seconds
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            spriteRenderer.sprite = newSprite; // change sprite
+            transform.localScale = newScale; // change scale
+            boxCollider.size = new Vector2(5.8f, 0.66f); // change boxcollider
+
+            StartCoroutine(Break(1.2f)); // break after 2 seconds
+        }
+    }
 
     IEnumerator Break(float duration)
     {
