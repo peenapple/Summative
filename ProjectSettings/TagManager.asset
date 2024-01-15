@@ -12,6 +12,7 @@ TagManager:
   - Audio
   - Deactivator
   - LevelPlatform
+  - Fireball
   layers:
   - Default
   - TransparentFX

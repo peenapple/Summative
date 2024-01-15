@@ -41,7 +41,7 @@ public class GameController3 : MonoBehaviour
         // if you collide with obstacle
         if (!finish)
         {
-            if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Saw"))
+            if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Saw") || collision.gameObject.CompareTag("Fireball"))
             {
                 Die();
             }

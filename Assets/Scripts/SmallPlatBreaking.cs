@@ -19,7 +19,7 @@ public class SmallPlatBreaking : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Saw"))
+        if (collision.gameObject.CompareTag("Saw") || collision.gameObject.CompareTag("Fireball"))
         {
             spriteRenderer.sprite = newSprite; // change sprite
             transform.localScale = newScale; // change scale

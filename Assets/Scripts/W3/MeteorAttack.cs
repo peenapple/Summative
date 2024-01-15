@@ -6,6 +6,8 @@ using static UnityEngine.ParticleSystem;
 public class MeteorAttack : MonoBehaviour
 {
     public float restDuration = 0f; // Duration to rest before starting
+    public float xPos;
+    public float yPos;
     ParticleSystem particles;
 
     [SerializeField] float tweenTime = 6f;
@@ -22,8 +24,8 @@ public class MeteorAttack : MonoBehaviour
     IEnumerator Rest(float duration)
     {
         yield return new WaitForSeconds(duration);
-        LeanTween.moveLocalX(transform.gameObject, -1.7f, tweenTime);
-        LeanTween.moveLocalY(transform.gameObject, -6.13f, tweenTime);
+        LeanTween.moveLocalX(transform.gameObject, xPos, tweenTime);
+        LeanTween.moveLocalY(transform.gameObject, yPos, tweenTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
