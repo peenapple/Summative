@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class FireJump : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class FireJump : MonoBehaviour
 
     private float initialPosition;
     private bool up = true;
+    ParticleSystem particles;
+
+    private void Awake()
+    {
+        particles = GetComponentInChildren<ParticleSystem>();
+    }
 
     void Start()
     {
@@ -40,5 +47,22 @@ public class FireJump : MonoBehaviour
                 up = true;
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Deactivator"))
+        {
+            // death effect
+            particles.Play();
+            transform.localScale = new Vector3(0, 0, 0);
+            StartCoroutine(Die(0.5f));
+        }
+    }
+
+    IEnumerator Die(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Destroy(transform.gameObject);
     }
 }
