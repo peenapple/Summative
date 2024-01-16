@@ -12,6 +12,7 @@ public class PlayerPlacing3 : MonoBehaviour
     public TextMeshProUGUI platCount;
     public TextMeshProUGUI deactCount;
 
+    public bool hasDeact = true;
     public int platCounter = 20;
     public int deactCounter = 3;
     private int initialPlatCount;
@@ -38,15 +39,18 @@ public class PlayerPlacing3 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (hasDeact)
         {
-            platActive = true;
-            deactActive = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            deactActive = true;
-            platActive = false;
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                platActive = true;
+                deactActive = false;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                deactActive = true;
+                platActive = false;
+            }
         }
 
         // Check for right mouse button click
