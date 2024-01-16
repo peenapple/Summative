@@ -26,6 +26,7 @@ public class MeteorAttack : MonoBehaviour
         yield return new WaitForSeconds(duration);
         LeanTween.moveLocalX(transform.gameObject, xPos, tweenTime);
         LeanTween.moveLocalY(transform.gameObject, yPos, tweenTime);
+        StartCoroutine(Die(tweenTime + 1f));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
