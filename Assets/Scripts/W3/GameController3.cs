@@ -19,7 +19,7 @@ public class GameController3 : MonoBehaviour
     [SerializeField] LeanTweenType tweenType;
 
     public int scrollSpeed;
-    public int scrollDistance;
+    public float scrollDistance;
     private bool finish = false;
 
     private void Awake()

@@ -8,6 +8,6 @@ public class LavaWaves : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LeanTween.moveLocalX(transform.gameObject, -140, tweenTime);
+        LeanTween.moveLocalX(transform.gameObject, -335, tweenTime);
     }
 }
