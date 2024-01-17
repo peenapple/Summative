@@ -159,4 +159,9 @@ public class MapController1 : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
+
+    public void Return()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
