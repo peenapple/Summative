@@ -20,6 +20,7 @@ public class GameController3 : MonoBehaviour
 
     public int scrollSpeed;
     public float scrollDistance;
+    public bool isL3 = false;
     private bool finish = false;
 
     private void Awake()
@@ -92,6 +93,17 @@ public class GameController3 : MonoBehaviour
 
     public void Home()
     {
+        if (isL3)
+        {
+            GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("Audio");
+
+            // Destroy each audio object found
+            foreach (GameObject audioObject in audioObjects)
+            {
+                Destroy(audioObject);
+            }
+        }
+
         SceneManager.LoadScene("W3");
         Time.timeScale = 1;
     }
@@ -110,6 +122,17 @@ public class GameController3 : MonoBehaviour
 
     public void Continue()
     {
+        if (isL3)
+        {
+            GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("Audio");
+
+            // Destroy each audio object found
+            foreach (GameObject audioObject in audioObjects)
+            {
+                Destroy(audioObject);
+            }
+        }
+
         SceneManager.LoadScene("W3");
         Time.timeScale = 1;
     }

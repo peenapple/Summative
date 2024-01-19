@@ -150,6 +150,14 @@ public class MapController3 : MonoBehaviour
 
     public void Start3()
     {
+        GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("Audio");
+
+        // Destroy each audio object found
+        foreach (GameObject audioObject in audioObjects)
+        {
+            Destroy(audioObject);
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 
