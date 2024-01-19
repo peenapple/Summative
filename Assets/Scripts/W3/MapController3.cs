@@ -35,11 +35,11 @@ public class MapController3 : MonoBehaviour
         // set player position on the map with playerprefs
         if (PlayerPrefs.GetInt("UnlockedLevel3", 0) == 2)
         {
-            player.position = new Vector3(1f, player.position.y, player.position.z);
+            player.position = new Vector3(-0.24f, player.position.y, player.position.z);
         }
         if (PlayerPrefs.GetInt("UnlockedLevel3", 0) == 3)
         {
-            player.position = new Vector3(5.87f, player.position.y, player.position.z);
+            player.position = new Vector3(4.635f, player.position.y, player.position.z);
         }
     }
 
@@ -155,6 +155,14 @@ public class MapController3 : MonoBehaviour
 
     public void Return()
     {
+        GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("Audio");
+
+        // Destroy each audio object found
+        foreach (GameObject audioObject in audioObjects)
+        {
+            Destroy(audioObject);
+        }
+
         SceneManager.LoadScene("Main Menu");
     }
 }

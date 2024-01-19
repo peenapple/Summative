@@ -15,6 +15,14 @@ public class MenuController : MonoBehaviour
 
     public void Continue()
     {
+        GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("Audio");
+
+        // Destroy each audio object found
+        foreach (GameObject audioObject in audioObjects)
+        {
+            Destroy(audioObject);
+        }
+
         if (PlayerPrefs.GetInt("UnlockedLevel1", 0) < 3)
         {
             SceneManager.LoadScene("W1");
@@ -31,6 +39,14 @@ public class MenuController : MonoBehaviour
 
     public void NewGame()
     {
+        GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("Audio");
+
+        // Destroy each audio object found
+        foreach (GameObject audioObject in audioObjects)
+        {
+            Destroy(audioObject);
+        }
+
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("W1");
     }
