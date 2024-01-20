@@ -8,7 +8,7 @@ public class PlayerPlacing1 : MonoBehaviour
     public GameObject prefabToInstantiate; 
     Vector3 previousMousePosition;
     public TextMeshProUGUI count;
-    private int placeCounter = 3;
+    public int placeCounter = 3;
 
     [SerializeField] RectTransform pauseBtn;
     [SerializeField] Transform pauseMenu;

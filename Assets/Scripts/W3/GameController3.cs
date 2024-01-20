@@ -90,7 +90,14 @@ public class GameController3 : MonoBehaviour
         playerRb.velocity = new Vector2(0, 0);
         transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(duration);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (isPt2)
+        {
+            SceneManager.LoadScene("W3L3 (1)");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void Pause()

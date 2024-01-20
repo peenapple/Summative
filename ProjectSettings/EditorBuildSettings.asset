@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/W3L3 (2).unity
     guid: 4d5af317117e77e46a0794eee296c069
+  - enabled: 1
+    path: Assets/Scenes/W3L3 (3).unity
+    guid: bc9ec907387de414ca202b343da5326f
   m_configObjects: {}

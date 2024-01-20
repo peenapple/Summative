@@ -7,7 +7,7 @@ public class SmallPlatBreaking : MonoBehaviour
 {
     public Sprite newSprite;
     public Vector3 newScale = new Vector3(0.31f, 0.31f, 1f);
-    public bool isPt2;
+    public bool isPt2 = false;
 
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
