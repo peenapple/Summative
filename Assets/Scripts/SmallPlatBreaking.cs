@@ -7,6 +7,7 @@ public class SmallPlatBreaking : MonoBehaviour
 {
     public Sprite newSprite;
     public Vector3 newScale = new Vector3(0.31f, 0.31f, 1f);
+    public bool isPt2;
 
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
@@ -30,7 +31,7 @@ public class SmallPlatBreaking : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !isPt2)
         {
             spriteRenderer.sprite = newSprite; // change sprite
             transform.localScale = newScale; // change scale
