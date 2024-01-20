@@ -21,6 +21,7 @@ public class GameController3 : MonoBehaviour
     public int scrollSpeed;
     public float scrollDistance;
     public bool isL3 = false;
+    public bool isPt2 = false;
     private bool finish = false;
 
     private void Awake()
@@ -34,7 +35,14 @@ public class GameController3 : MonoBehaviour
         // spawn point
         startPos = transform.position;
         // main camera scrolling
-        LeanTween.moveLocalX(Camera.main.transform.gameObject, scrollDistance, scrollSpeed);
+        if (isPt2)
+        {
+            LeanTween.moveLocalY(Camera.main.transform.gameObject, scrollDistance, scrollSpeed);
+        }
+        else
+        {
+            LeanTween.moveLocalX(Camera.main.transform.gameObject, scrollDistance, scrollSpeed);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -116,7 +124,14 @@ public class GameController3 : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (isPt2)
+        {
+            SceneManager.LoadScene("W3L3 (1)");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
         Time.timeScale = 1;
     }
 
